@@ -13,8 +13,7 @@ def main():
     paper_build = get_latest_build_for_version(MC_VERSION)
     jar_name = f"paper-{MC_VERSION}-{paper_build}.jar"
 
-    if os.path.exists(jar_name):
-        delete_old_jar()
+    if not os.path.exists(jar_name):
         download_server_jar(paper_build, jar_name)
 
     generate_eula_if_needed(jar_name)
