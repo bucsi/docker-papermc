@@ -1,0 +1,13 @@
+services:
+  papermc:
+    build: .
+    ports:
+      - "25565:${EXTERNAL_PORT}"
+    volumes:
+      - .:/server
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    restart: always
+    container_name: ${CONTAINER_NAME}
