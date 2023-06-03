@@ -7,6 +7,9 @@ help: ## Show this help
 	@fgrep -h "##" $(MAKEFILE_LIST) | grep ":" | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/\(.*\):.*##[ \t]*/    \1 ## /' | sort | column -t -s '##'
 	@echo
 
+env: ## Create the .env file
+	cp example.env .env
+
 build: ## Build the docker image
 	docker compose build
 
