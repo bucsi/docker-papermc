@@ -13,6 +13,8 @@ def main():
     paper_build = get_latest_build_for_version(MC_VERSION)
     jar_name = f"paper-{MC_VERSION}-{paper_build}.jar"
 
+    delete_older_jars(jar_name)
+    
     if not os.path.exists(jar_name):
         download_server_jar(paper_build, jar_name)
 
@@ -26,9 +28,9 @@ def download_server_jar(paper_build, jar_name):
     urllib.request.urlretrieve(papermc_download_url, jar_name)
 
 
-def delete_old_jar():
+def delete_older_jars(current_jar_name):
     for file in os.listdir("."):
-        if file.endswith(".jar"):
+        if file.endswith(".jar") and file != current_jar_name:
             os.remove(file)
 
 
