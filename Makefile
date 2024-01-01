@@ -11,19 +11,19 @@ env: ## Create the .env file
 	cp example.env .env
 
 build: ## Build the docker image
-	docker compose build
+	docker-compose build
 
 up: ## Start the docker container (detached)
-	docker compose up -d
+	docker-compose up -d
 
 down: ## Stop the docker container
-	docker compose down
+	docker-compose down
 
 logs: ## Show the docker logs
-	docker compose logs -f
+	docker-compose logs -f
 
 sh: ## Open a shell in the docker container
-	docker compose exec papermc sh
+	docker-compose exec papermc sh
 
 dev: ## Rebuild the docker image and start the container
 	down build up
