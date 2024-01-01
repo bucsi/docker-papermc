@@ -25,5 +25,4 @@ logs: ## Show the docker logs
 sh: ## Open a shell in the docker container
 	docker-compose exec papermc sh
 
-dev: ## Rebuild the docker image and start the container
-	down build up
+dev: down build up
