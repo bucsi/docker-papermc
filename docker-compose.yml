@@ -11,3 +11,4 @@ services:
     tty: true
     restart: always
     container_name: ${CONTAINER_NAME}
+    user: "1000:1000"  # Replace with the correct UID:GID
