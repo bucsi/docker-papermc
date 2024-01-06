@@ -9,6 +9,6 @@ services:
       - .env
     stdin_open: true
     tty: true
-    restart: unless-stopped
+    restart: on-failure
     container_name: ${CONTAINER_NAME}
     user: "1000:1000"  # Replace with the correct UID:GID
