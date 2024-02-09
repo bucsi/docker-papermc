@@ -3,6 +3,7 @@ services:
     build: .
     ports:
       - "${EXTERNAL_PORT}:25565"
+      - "${EXTRA_PORT}:${EXTRA_PORT}"
     volumes:
       - .:/server
     env_file:
